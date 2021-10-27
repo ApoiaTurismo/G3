@@ -19,7 +19,7 @@ Olá! Esse é o projeto do grupo 3, o ApoiaTurismo!
 
 Tabela Usuário: <br>
 <br>
->  id_usuario - É o atributo único de cada usuário no site; <br>
+	*  id_usuario - É o atributo único de cada usuário no site; <br>
 >  nome - um nome para representar a pessoa, não necessariamente um nome completo, podendo ser um apelido, por exemplo; <br>
 >  email - email com um endereço único para identificar e ter contato com o usuário; <br>
 >  senha - senha para o acesso do usuário à plataforma. <br>
