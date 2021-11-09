@@ -23,6 +23,8 @@ import br.com.apoiaturismo.ApoiaTurismo.repository.CategoriaRepository;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CategoriaController {
 
+	//TODO verificar o método getByIdCategoria e respeitar o cammelcase
+	
 	@Autowired
 	private CategoriaRepository repository;
 	
@@ -32,7 +34,7 @@ public class CategoriaController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Categoria> getByIDCategoria(@PathVariable long id){
+	public ResponseEntity<Categoria> getByIdCategoria(@PathVariable long id){
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());

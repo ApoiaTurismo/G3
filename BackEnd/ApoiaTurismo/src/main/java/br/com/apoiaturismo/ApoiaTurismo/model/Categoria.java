@@ -12,9 +12,11 @@ import javax.validation.constraints.Size;
 @Table(name = "tb_categoria")
 public class Categoria {
 
+	// TODO mudar o link do icone para suportar mais caracteres, colocar mensagem também no notnull, boas práticas para as variáveis
+	// TODO existem 2 getters and setters do Id
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_categoria;
+	private long id;
 	
 	@NotNull
 	@Size(min = 5, max = 20, message = "O tipo deve conter no mínimo 5 e no máximo 20 caracteres")
@@ -25,15 +27,23 @@ public class Categoria {
 	private String descricao_categoria;
 	
 	@NotNull
-	@Size(min = 3, max = 50, message = "O atributo icone deve conter no mínimo 5 e no máximo 50 caracteres")
+	@Size(min = 3, max = 255, message = "O atributo icone deve conter no mínimo 5 e no máximo 255 caracteres") 
 	private String icone;
 
-	public long getId_categoria() {
-		return id_categoria;
+	public long getId() {
+		return id;
 	}
 
-	public void setId_categoria(long id_categoria) {
-		this.id_categoria = id_categoria;
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getDescricao_categoria() {
+		return descricao_categoria;
+	}
+
+	public void setDescricao_categoria(String descricao_categoria) {
+		this.descricao_categoria = descricao_categoria;
 	}
 
 	public String getIcone() {
@@ -42,14 +52,6 @@ public class Categoria {
 
 	public void setIcone(String icone) {
 		this.icone = icone;
-	}
-
-	public long getId() {
-		return id_categoria;
-	}
-
-	public void setId(long id) {
-		this.id_categoria = id;
 	}
 
 	public String getTipo() {
