@@ -13,7 +13,7 @@ Olá! Esse é o projeto do grupo 3, o ApoiaTurismo!
 </h2>
 <h4 align="center">
 
-![chrome_esbFLAM3aX](https://user-images.githubusercontent.com/19335381/139084525-baa7c1a3-8766-424f-8102-c1659d1af0ba.png)
+![image](https://user-images.githubusercontent.com/19335381/140929924-d3041dba-55e8-4e6b-9955-dbc997e1789e.png)
 
 </h4>
 <h4>
