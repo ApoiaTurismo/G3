@@ -22,11 +22,27 @@ public class Categoria {
 	
 	@NotNull
 	@Size(min = 5, max = 150, message = "A descrição deve conter no mínimo 5 e no máximo 150 caracteres")
-	private String descricao;
+	private String descricao_categoria;
 	
 	@NotNull
-	@Size(min = 3, max = 20, message = "A região deve conter no mínimo 5 e no máximo 20 caracteres")
-	private String regiao;
+	@Size(min = 3, max = 50, message = "O atributo icone deve conter no mínimo 5 e no máximo 50 caracteres")
+	private String icone;
+
+	public long getId_categoria() {
+		return id_categoria;
+	}
+
+	public void setId_categoria(long id_categoria) {
+		this.id_categoria = id_categoria;
+	}
+
+	public String getIcone() {
+		return icone;
+	}
+
+	public void setIcone(String icone) {
+		this.icone = icone;
+	}
 
 	public long getId() {
 		return id_categoria;
@@ -45,19 +61,11 @@ public class Categoria {
 	}
 
 	public String getDescricao() {
-		return descricao;
+		return descricao_categoria;
 	}
 
 	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public String getRegiao() {
-		return regiao;
-	}
-
-	public void setRegiao(String regiao) {
-		this.regiao = regiao;
+		this.descricao_categoria = descricao;
 	}
 	
 }
