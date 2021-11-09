@@ -32,7 +32,7 @@ Tabela Categoria:
 <li>id_categoria - É o atributo único de cada Categoria no site;</li>
 <li>tipo - Identificação se é um produto ou serviço;</li>
 <li>descrição - Representação da exposição dos detalhes de cada produto;</li>
-<li>região - Identificar a criação oriundo de cada produto.</li>
+<li>icone - url do ícone/imagem de cada categoria.</li>
 </ul>
 <h4>
 Tabela Produto:
@@ -43,6 +43,7 @@ Tabela Produto:
 <li>foto - A representação fotográfica do produto;</li>
 <li>descricao - Descrição do produto e suas características;</li>
 <li>preco - O valor monetário em moeda local do produto;</li>
+<li>regiao - Identificar a criação oriundo de cada produto.</li>
 <li>fk_categoria - Atributo conectivo entre as tabelas;</li>
 <li>fk_ usuário - Atributo conectivo entre as tabelas;</li>
 </ul>
