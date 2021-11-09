@@ -12,7 +12,7 @@
 	<artifactId>ApoiaTurismo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ApoiaTurismo</name>
-	<description>Projeto integrador - Apoia Turismo</description>
+	<description>projeto integrador - apoia turismo</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
