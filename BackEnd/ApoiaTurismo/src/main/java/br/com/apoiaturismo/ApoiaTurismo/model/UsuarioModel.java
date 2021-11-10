@@ -24,12 +24,13 @@ public class UsuarioModel {
 
 	// Adicionando nome usuario como nick para login e identificação
 	@NotBlank(message = "Não pode conter só espaços ou valor nulo")
-	@Size(min = 3, max = 50, message = "O nome deve conter no mínimo 3 e no máximo 50 caracteres")
+	@Size(min = 3, max = 70, message = "O nome deve conter no mínimo 3 e no máximo 70 caracteres")
 	private String nomeUsuario;
 
+	//Nick é o nome publico de qualquer usuário
 	@NotBlank(message = "Não pode conter só espaços ou valor nulo")
-	@Size(min = 3, max = 50, message = "O nome deve conter no mínimo 3 e no máximo 50 caracteres")
-	private String nome;
+	@Size(min = 3, max = 20, message = "O nome deve conter no mínimo 3 e no máximo 20 caracteres")
+	private String nick;
 
 	@NotBlank(message = "Não pode conter só espaços ou valor nulo")
 	@Size(min = 9, max = 50, message = "O email deve conter no mínimo 9 e no máximo 50 caracteres")
@@ -59,12 +60,12 @@ public class UsuarioModel {
 		this.nomeUsuario = nomeUsuario;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNick() {
+		return nick;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 
 	public String getEmail() {

@@ -9,9 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -40,8 +40,8 @@ public class ProdutoModel {
 	@Size(min = 3, max = 15, message = "O tipo deve conter no mínimo 3 e no máximo 15 caracteres")
 	private String regiao;
 
-	@NotNull
-	@Min(value = 0, message = "O valor minímo é de 0")
+	@NotNull(message = "Não pode conter valor nulo")
+	@Positive(message = "O valor precisa ser positivo")
 	private BigDecimal preco;
 
 	@ManyToOne
