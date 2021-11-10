@@ -2,6 +2,8 @@ package br.com.apoiaturismo.ApoiaTurismo.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.apoiaturismo.ApoiaTurismo.model.Categoria;
+import br.com.apoiaturismo.ApoiaTurismo.model.CategoriaModel;
 import br.com.apoiaturismo.ApoiaTurismo.repository.CategoriaRepository;
 
 @RestController
@@ -29,29 +31,29 @@ public class CategoriaController {
 	private CategoriaRepository repository;
 	
 	@GetMapping
-	public ResponseEntity<List<Categoria>> getAllCategoria(){
+	public ResponseEntity<List<CategoriaModel>> getAllCategoria(){
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Categoria> getByIdCategoria(@PathVariable long id){
+	public ResponseEntity<CategoriaModel> getByIdCategoria(@PathVariable long id){
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
-	@GetMapping("/categorias/{tipo}")
-	public ResponseEntity<List<Categoria>> getByTipoCategoria(@PathVariable String tipo){
+	@GetMapping("/tipo/{tipo}")
+	public ResponseEntity<List<CategoriaModel>> getByTipoCategoria(@PathVariable String tipo){
 		return ResponseEntity.ok(repository.findAllByTipoContainingIgnoreCase(tipo));
 	}
 	
 	@PostMapping
-	public ResponseEntity<Categoria> postCategoria(@RequestBody Categoria categoria){
+	public ResponseEntity<CategoriaModel> postCategoria(@Valid @RequestBody CategoriaModel categoria){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(categoria));
 	}
 	
 	@PutMapping
-	public ResponseEntity<Categoria> putCategoria(@RequestBody Categoria categoria){
+	public ResponseEntity<CategoriaModel> putCategoria(@Valid @RequestBody CategoriaModel categoria){
 		return ResponseEntity.ok(repository.save(categoria));
 	}
 	

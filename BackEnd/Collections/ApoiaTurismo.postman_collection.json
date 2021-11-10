@@ -1,146 +1,294 @@
 {
 	"info": {
-		"_postman_id": "44228994-8c53-477f-b0fd-5681030ede64",
+		"_postman_id": "809f0d34-6a10-47ed-b7a5-be21b7932e83",
 		"name": "ApoiaTurismo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "GET ALL",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/categorias",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"categorias"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"tipo\": \"Brinquedos\",\r\n    \"descricao\": \"Coisas como jogos de tabuleiro,jogos de faz de conta, jogos de salão e blocos de montar\",\r\n    \"icone\": \"http://url/\"\r\n    \r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/categorias",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"categorias"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET BY ID",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"tipo\": \"Brinquedos\",\r\n    \"descricao\": \"Coisas como jogos de tabuleiro,jogos de faz de conta, jogos de salão e blocos de montar\",\r\n    \"icone\": \"http://url/\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/categorias/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"categorias",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET BY TIPO",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/categorias/categorias/o",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"categorias",
-						"categorias",
-						"o"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"tipo\": \"Moveis\",\r\n    \"descricao\": \"Coisas como jogos de tabuleiro,jogos de faz de conta, jogos de salão e blocos de montar\",\r\n    \"icone\": \"http://url/\",\r\n    \"id_categoria\":\"2\"\r\n    \r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "GET BY ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categorias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias",
+								"1"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/categorias",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"categorias"
-					]
+				{
+					"name": "GET BY TIPO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categorias/categorias/o",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias",
+								"categorias",
+								"o"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"tipo\": \"Moveis\",\r\n    \"descricao\": \"Coisas como jogos de tabuleiro,jogos de faz de conta, jogos de salão e blocos de montar\",\r\n    \"icone\": \"http://url/\",\r\n    \"id_categoria\":\"2\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "DELETE",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
-			},
-			"response": []
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Get produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID produto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produtos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY TITULO produto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produtos/titulo/cama",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"titulo",
+								"cama"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Guarda-roupa\",\r\n    \"descricaoProduto\": \"Usa para guardar roupa\",\r\n    \"fotoUrl\": \"Imagem de guarda roupa\",\r\n    \"preco\": 599.99,\r\n    \"regiao\": \"Centro-Oeste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT produto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProduto\": 4,\r\n   \"titulo\": \"Maquina de lavar\",\r\n   \"descricaoProduto\": \"Maquina de lavar usada\" ,\r\n   \"fotoUrl\": \"https://produto.mercadolivre.com.br/MLB-2049682821-nier-automata-2b-bring-arts-figure-original-_JM#position=18&search_layout=grid&type=item&tracking_id=b7d47cb9-e357-4b10-8899-3cbb6f8b8f27\",\r\n   \"preco\": 1999.99,\r\n   \"regiao\": \"Nordeste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE produto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produtos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produtos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
