@@ -6,11 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_produto")
@@ -38,7 +42,17 @@ public class ProdutoModel {
 
 	@NotNull
 	@Min(value = 0, message = "O valor minímo é de 0")
-	private BigDecimal preco; //
+	private BigDecimal preco;
+
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	@JoinColumn(name = "fk_id_categoria")
+	private CategoriaModel categoria;
+
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	@JoinColumn(name = "fk_id_usuario")
+	private UsuarioModel usuario;
 
 	public long getIdProduto() {
 		return idProduto;
@@ -86,6 +100,22 @@ public class ProdutoModel {
 
 	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
+	}
+
+	public CategoriaModel getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(CategoriaModel categoria) {
+		this.categoria = categoria;
+	}
+
+	public UsuarioModel getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UsuarioModel usuario) {
+		this.usuario = usuario;
 	}
 
 }

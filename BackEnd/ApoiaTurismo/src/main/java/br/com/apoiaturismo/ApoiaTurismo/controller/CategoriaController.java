@@ -26,7 +26,7 @@ import br.com.apoiaturismo.ApoiaTurismo.repository.CategoriaRepository;
 public class CategoriaController {
 
 	//TODO verificar o método getByIdCategoria e respeitar o cammelcase
-	
+	// N1 : 1
 	@Autowired
 	private CategoriaRepository repository;
 	

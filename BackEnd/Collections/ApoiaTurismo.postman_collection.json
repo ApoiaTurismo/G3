@@ -34,7 +34,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"tipo\": \"Brinquedos\",\r\n    \"descricao\": \"Coisas como jogos de tabuleiro,jogos de faz de conta, jogos de salão e blocos de montar\",\r\n    \"icone\": \"http://url/\"\r\n    \r\n}",
+							"raw": "{\"tipo\": \"Brinquedos\",\r\n    \"descricaoCategoria\": \"video game do minerinho\",\r\n    \"icone\": \"http://url/\"\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -219,7 +219,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"titulo\": \"Guarda-roupa\",\r\n    \"descricaoProduto\": \"Usa para guardar roupa\",\r\n    \"fotoUrl\": \"Imagem de guarda roupa\",\r\n    \"preco\": 599.99,\r\n    \"regiao\": \"Centro-Oeste\"\r\n}",
+							"raw": "{\r\n    \"titulo\": \"Guarda-roupa\",\r\n    \"descricaoProduto\": \"Usa para guardar roupa\",\r\n    \"fotoUrl\": \"Imagem de guarda roupa\",\r\n    \"preco\": 599.99,\r\n    \"regiao\": \"Centro-Oeste\",\r\n    \"categoria\": {\"idCategoria\" :2}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
