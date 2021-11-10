@@ -9,7 +9,7 @@ Olá! Esse é o projeto do grupo 3, o ApoiaTurismo!
 
 </h4>
 <h2>
-  No momento estamos no estágio de desenvolver o banco de dados
+  No momento estamos no estágio de desenvolver a API de comunicação com o banco de dados!
 </h2>
 <h4 align="center">
 
