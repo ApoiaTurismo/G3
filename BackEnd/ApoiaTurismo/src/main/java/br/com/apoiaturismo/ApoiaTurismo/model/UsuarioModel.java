@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -33,17 +34,31 @@ public class UsuarioModel {
 	private String nick;
 
 	@NotBlank(message = "Não pode conter só espaços ou valor nulo")
-	@Size(min = 9, max = 50, message = "O email deve conter no mínimo 9 e no máximo 50 caracteres")
+	@Email(message = "Precisa ser um email válido")
 	private String email;
 
 	@NotBlank(message = "Não pode conter só espaços ou valor nulo")
-	@Size(min = 6, max = 15, message = "A senha deve conter no mínimo 6 e no máximo 15 caracteres")
+	//@Size(min = 6, max = 15, message = "A senha deve conter no mínimo 6 e no máximo 15 caracteres")
 	private String senha;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<ProdutoModel> produto;
 
+	public UsuarioModel(long id, String nome, String nick, String email, String senha) {
+	
+		this.idUsuario = id;
+		this.nomeUsuario = nome;
+		this.nick = nick;
+		this.email = email;
+		this.senha = senha;
+		
+	}
+	
+	public UsuarioModel() {
+		
+	}
+	
 	public long getIdUsuario() {
 		return idUsuario;
 	}
