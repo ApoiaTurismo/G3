@@ -9,8 +9,13 @@ Olá! Esse é o projeto do grupo 3, o ApoiaTurismo!
 
 </h4>
 <h2>
-  No momento estamos no estágio de desenvolver a API de comunicação com o banco de dados!
-</h2>
+  A plicação já esta rodando no Heroku com o backend feito https://apoiaturismo.herokuapp.com/ 
+</h2> 
+<h4 align="center">
+  
+![chrome_DfuX26tE7F](https://user-images.githubusercontent.com/19335381/142626427-e8f5fbba-f591-471a-937a-406195827495.png)
+  
+</h4>  
 <h4 align="center">
 
 ![chrome_Qp6n3VONk3](https://user-images.githubusercontent.com/19335381/140969308-c0889633-7c82-4c28-b90f-fc36359133e9.png)
