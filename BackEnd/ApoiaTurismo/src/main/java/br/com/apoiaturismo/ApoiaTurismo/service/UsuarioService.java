@@ -51,6 +51,7 @@ public class UsuarioService {
 	public Optional<UsuarioLogin> autenticarUsuario(Optional<UsuarioLogin> usuarioLogin) {
 
 		Optional<UsuarioModel> usuario = usuarioRepository.findByNick(usuarioLogin.get().getNick());
+		System.out.println(usuario.get().getEmail());
 
 		if (usuario.isPresent()) {
 			if (compararSenhas(usuarioLogin.get().getSenha(), usuario.get().getSenha())) {
@@ -59,6 +60,8 @@ public class UsuarioService {
 
 				usuarioLogin.get().setId(usuario.get().getIdUsuario());
 				usuarioLogin.get().setNomeUsuario(usuario.get().getNomeUsuario());
+				usuarioLogin.get().setNick(usuario.get().getNick());
+				usuarioLogin.get().setEmail(usuario.get().getEmail());
 				usuarioLogin.get().setSenha(usuario.get().getSenha());
 				usuarioLogin.get().setToken(token);
 
@@ -66,7 +69,7 @@ public class UsuarioService {
 
 			}
 		}
-
+		
 		return Optional.empty();
 
 	}

@@ -13,11 +13,13 @@ public class UserDetailsImpl implements UserDetails{
 	public static final long serialVersionUID = 1L;
 	
 	private String userName;
+//	private String email;
 	private String password;
 	private List<GrantedAuthority> authorities;
 	
 	public UserDetailsImpl(UsuarioModel user) {
 		this.userName = user.getNick();
+//		this.email = user.getEmail();
 		this.password = user.getSenha();
 	}
 	
@@ -42,6 +44,12 @@ public class UserDetailsImpl implements UserDetails{
 		// TODO Auto-generated method stub
 		return userName;
 	}
+/*
+	@Override
+	public String getEmail() {
+		return email;
+	}
+*/
 
 	@Override
 	public boolean isAccountNonExpired() {
