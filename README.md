@@ -9,7 +9,7 @@ Olá! Esse é o projeto do grupo 3, o ApoiaTurismo!
 
 </h4>
 <h2>
-  A plicação já esta rodando no Heroku com o backend feito https://apoiaturismo.herokuapp.com/ 
+  A aplicação já esta rodando no Heroku com o backend feito https://apoiaturismo.herokuapp.com/ 
 </h2> 
 <h4 align="center">
   
