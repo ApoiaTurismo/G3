@@ -1,0 +1,10 @@
+.jumbotron {
+  background-color: rgb(244, 249, 249);
+}
+
+
+#carta:hover{
+
+ transform: scale(1.1);
+
+}
