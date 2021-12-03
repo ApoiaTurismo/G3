@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light justify-content-between">
-  <div class="d-flex inline">
+  <div class="d-flex inline ml-5">
     <a class="navbar-brand">Apoia Turismo</a>
     <div class="dropright">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -18,5 +18,17 @@
   <input class="form-control" type="search" placeholder="Queria pesquisar por..." style="width: 600px;" aria-label="Search">
   <button type="button" class="btn btn-primary ml-1">Pesquisar</button>
   </form>
-  <button type="button" class="btn btn-warning">Anunciar</button>
+  <div class="d-flex justify-content-between mr-5">
+    <a class="mr-3" href="/categorias/carrinho" style="text-decoration: none;">
+      <div class="rounded-circle bg-light d-flex justify-content-center align-items-center m-auto" style="height: 40px; width: 40px;">
+        <i class="fa fa-shopping-cart"></i>
+      </div>
+    </a>
+    <a routerLink="/entrar">
+      <button type="button" class="btn btn-outline-secondary mr-5">
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        Entrar</button>
+    </a>
+    <button type="button" class="btn btn-warning">Anunciar</button>
+  </div>
 </nav>

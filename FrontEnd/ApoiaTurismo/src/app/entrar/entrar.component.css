@@ -1,0 +1,17 @@
+
+
+#teste2 {
+  background-color: rgba(255, 252, 235, 0.9);
+  border-radius: 10px;
+  border: 1px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+
+#teste {
+  padding: 10% 30%;
+  background-image: url("https://cdn.discordapp.com/attachments/900750565712199700/916386543457943562/vai_krai.png");
+  background-repeat: no-repeat;
+
+ /* background-image: url("../../img/SL_042620_30310_10.jpg"); */
+}
