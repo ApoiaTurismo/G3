@@ -9,7 +9,12 @@
 
 
 #teste {
-  padding: 10% 30%;
+  padding: 5% 30%;
   background-image: url("https://cdn.discordapp.com/attachments/900750565712199700/916386543457943562/vai_krai.png");
   background-repeat: no-repeat;
+}
+
+
+#btn-cancelar:hover {
+  background-color: #91171b;
 }
