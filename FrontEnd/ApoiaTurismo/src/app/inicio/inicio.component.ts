@@ -18,6 +18,7 @@ export class InicioComponent implements OnInit {
   categoria: Categoria = new Categoria()
   idCategoria: number
   listaCategorias: Categoria[]
+  listaProdutos: Produto[]
 
   usuario: Usuario = new Usuario()
   idUser = environment.id
@@ -31,6 +32,7 @@ export class InicioComponent implements OnInit {
   ngOnInit() {
 
     this.getAllCategorias()
+    this.getAllProdutos()
 
   }
 
@@ -44,6 +46,12 @@ export class InicioComponent implements OnInit {
   getAllCategorias(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
       this.listaCategorias = resp
+    })
+  }
+
+  getAllProdutos(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp
     })
   }
 
@@ -63,6 +71,7 @@ export class InicioComponent implements OnInit {
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
       alert('Anuncio feito com sucesso!')
+      this.ngOnInit()
       this.produto = new Produto()
     })
   }
