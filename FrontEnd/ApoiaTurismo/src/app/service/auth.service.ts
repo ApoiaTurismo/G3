@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
@@ -10,7 +11,9 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 export class AuthService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{

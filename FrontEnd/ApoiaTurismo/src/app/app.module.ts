@@ -13,6 +13,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
+import { TodasCategoriasComponent } from './todas-categorias/todas-categorias.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InicioComponent } from './inicio/inicio.component';
     SobrenosComponent,
     EntrarComponent,
     CadastrarComponent,
-    InicioComponent
+    InicioComponent,
+    TodasCategoriasComponent
   ],
   imports: [
     BrowserModule,

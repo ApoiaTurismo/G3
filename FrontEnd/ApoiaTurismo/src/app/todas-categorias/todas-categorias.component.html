@@ -1,0 +1,67 @@
+<div class="container-fluid">
+
+  <div class="row bg-warning">
+    <div class="col-md-12">
+
+      <button type="button" class="btn btn-outline-dark ml-5" (click)="voltarInicio()">
+        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+        Voltar
+      </button>
+
+      <h1 class="fs-42 text-center">Categorias</h1>
+      <h5 class="fs-18 text-center">veja todas as categorias ou cadastre uma nova</h5>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-3">
+          <div class="form-group">
+            <input [(ngModel)]='categoria.tipo' type="text" class="form-control" id='tipo' placeholder="Digite o tipo da categoria">
+            <input [(ngModel)]='categoria.descricaoCategoria' type="text" class="form-control mt-2" id='descricao' placeholder="Digite a descrição da categoria">
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-info mb-5" (click)="cadastrar()">Cadastrar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h2 class="text-center">todas as categorias:</h2>
+    </div>
+  </div>
+
+  <div class="row my-4 d-flex justify-content-center">
+    <div class="col-md-6">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Descricao</th>
+            <th scope='col'>Visualizar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let categoria of listaCategorias">
+
+            <th scope="row">{{categoria.idCategoria}}</th>
+            <td>{{categoria.tipo}}</td>
+            <td>{{categoria.descricaoCategoria}}</td>
+            <td class="d-flex justify-content-center">
+              <button class="btn btn-info">Ver todos produtos</button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

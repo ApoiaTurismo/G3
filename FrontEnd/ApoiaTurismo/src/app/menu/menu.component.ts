@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  nick = environment.nick
+  foto = environment.foto
 
-  ngOnInit(): void {
+  constructor(
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+  }
+
+  logado(){
+    if(environment.token != ''){
+      return true
+    }
+
+    return false
+  }
+
+  sair(){
+    environment.token = ''
+    environment.nome = ''
+    environment.foto = ''
+    environment.id = 0
+    this.router.navigate(['/inicio'])
   }
 
 }

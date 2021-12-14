@@ -1,1 +1,88 @@
-<p>inicio works!</p>
+<div class="container-fluid">
+
+  <div class="row  d-flex justify-content-center align-items-center">
+
+    <div class="col-md-6 my-5">
+      <div class="row d-flex justify-content-center align-items-center flex-column">
+
+          <h1 class="fs-42">Olá nos somos o Apoia Turismo!</h1>
+          <h5 class="fs-18">o e-commerce de produtos artesanais</h5>
+          <!--Botao do modal-->
+          <h5 *ngIf="logado()" class="fs-18">
+            Qual produto voce quer
+            <button type="button" class="btn btn-warning" data-toggle='modal' data-target='#novaPostagem'>Anunciar</button>
+            ?
+          </h5>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center">
+      <img src="https://cdn.discordapp.com/attachments/900750565712199700/916396809872633886/Sem_Titulo-1.png" alt="" height="300px">
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Novo Anuncio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input [(ngModel)]='produto.titulo' type="text" class="form-control" id="titulo" placeholder="Digite o título do produto">
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">descrição</label>
+          <textarea [(ngModel)]='produto.descricaoProduto' class="form-control" name="descricao" id="descricao" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="foto">foto</label>
+          <input [(ngModel)]='produto.fotoUrl' type='text' class="form-control" name="foto" id="foto" placeholder="URL da foto">
+        </div>
+
+        <div class="form-group">
+          <label for="preco">preço</label>
+          <input [(ngModel)]='produto.preco' type='text' class="form-control" name="preco" id="preco" placeholder="preço do produto somente em números">
+        </div>
+
+        <div class="form-group">
+          <label for="regioes">Região do Brasil</label>
+          <select [(ngModel)]='produto.regiao' class="form-control" name="regioes" id="regioes">
+            <option value="sudeste">Sudeste</option>
+            <option value="nordeste">Nordeste</option>
+            <option value="centroOeste">Centro-Oeste</option>
+            <option value="norte">Norte</option>
+            <option value="sul">Sul</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="titulo">Escolha uma categoria ou <a routerLink="/todascategorias" data-dismiss="modal">cadastre uma nova</a></label>
+          <select class="form-control" name="tema" id="tema" [(ngModel)]='idCategoria' (change)="findByIdCategoria()">
+            <option *ngFor="let item of listaCategorias" value="{{item.idCategoria}}">{{item.tipo}}</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-outline-success" data-dismiss="modal" (click)='publicar()'>Anunciar</button>
+      </div>
+    </div>
+  </div>
+</div>

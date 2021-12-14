@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ApoiaTurismo';
+
+  constructor(
+    public auth: AuthService,
+    public router: Router
+  ){
+
+  }
+
+  entrarOuCadastrar(){
+    if(this.router.url == '/entrar' || this.router.url == '/cadastrar'){
+      return false
+    }
+    return true
+  }
+
+  estaCategorias(){
+    if(this.router.url == '/todascategorias')
+    return false
+
+    return true
+  }
+
 }

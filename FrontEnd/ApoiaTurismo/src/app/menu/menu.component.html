@@ -1,6 +1,6 @@
-<nav class="navbar navbar-light justify-content-between">
+<nav class="navbar navbar-light justify-content-between text-light">
   <div class="d-flex inline ml-5">
-    <a class="navbar-brand">Apoia Turismo</a>
+    <a class="navbar-brand text-light">Apoia Turismo</a>
     <div class="dropright">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Regiões
@@ -24,11 +24,18 @@
         <i class="fa fa-shopping-cart"></i>
       </div>
     </a>
-    <a routerLink="/entrar">
-      <button type="button" class="btn btn-outline-secondary mr-5">
+    <a  *ngIf="logado() == false" routerLink="/entrar">
+      <button type="button" class="btn btn-secondary mr-5">
         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
         Entrar</button>
     </a>
-    <button type="button" class="btn btn-warning">Anunciar</button>
+    <div *ngIf="logado()" class="mx-3">
+      <img src="{{foto}}" alt="" width="40px" height="40px" class="mr-3 img-fluid rounded-circle">
+      <strong>{{nick}}</strong>
+      <a (click)="sair()">
+        <i class="fa fa-sign-out ml-2" aria-hidden="true"></i>
+      </a>
+    </div>
+  <!--  <button type="button" class="btn btn-warning">Anunciar</button> -->
   </div>
 </nav>
