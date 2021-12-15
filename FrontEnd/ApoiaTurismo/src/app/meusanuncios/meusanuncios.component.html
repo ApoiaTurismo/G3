@@ -1,0 +1,32 @@
+<div class="container-fluid">
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-12 bg-warning">
+      <h1 class="fs-42 text-center">Meus anuncios</h1>
+      <h5 class="fs-18 text-center">Editar ou deletar meus anuncios:</h5>
+    </div>
+  </div>
+
+</div>
+
+<div class="card-columns my-5 mx-2">
+
+  <div *ngFor="let item of usuario.produto" class="card mb-3" style="max-width: 600px; max-height: 250px;">
+    <div class="row no-gutters">
+      <div class="col-md-4 align-items-center">
+        <img src="{{item.fotoUrl}}" class="card-img" alt="..." style="object-fit: cover; width: 220px; height: 250px;">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body ml-2">
+          <h5 class="card-title">{{item.titulo}}</h5>
+          <p class="card-text">{{item.descricaoProduto}}</p>
+          <h5 class="card-title text-bold">R${{item.preco}}</h5>
+
+          <a [routerLink]="['/produto-edit',item.idProduto]" class="btn btn-info mr-3">Editar</a>
+          <a [routerLink]="['/produto-delete',item.idProduto]" class="btn btn-danger">Excluir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

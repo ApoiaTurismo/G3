@@ -14,6 +14,9 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FormsModule } from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
 import { TodasCategoriasComponent } from './todas-categorias/todas-categorias.component';
+import { MeusanunciosComponent } from './meusanuncios/meusanuncios.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { TodasCategoriasComponent } from './todas-categorias/todas-categorias.co
     EntrarComponent,
     CadastrarComponent,
     InicioComponent,
-    TodasCategoriasComponent
+    TodasCategoriasComponent,
+    MeusanunciosComponent,
+    ProdutoEditComponent,
+    ProdutoDeleteComponent
   ],
   imports: [
     BrowserModule,

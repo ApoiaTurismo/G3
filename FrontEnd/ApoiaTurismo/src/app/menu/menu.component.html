@@ -25,11 +25,12 @@
       </div>
     </a>
     <a  *ngIf="logado() == false" routerLink="/entrar">
-      <button type="button" class="btn btn-secondary mr-5">
+      <button type="button" class="btn btn-secondary mr-3">
         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
         Entrar</button>
     </a>
     <div *ngIf="logado()" class="mx-3">
+      <a routerLink="/meusanuncios" class="btn btn-warning mr-3">meus anuncios</a>
       <img src="{{foto}}" alt="" width="40px" height="40px" class="mr-3 img-fluid rounded-circle">
       <strong>{{nick}}</strong>
       <a (click)="sair()">
