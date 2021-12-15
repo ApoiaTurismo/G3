@@ -17,6 +17,7 @@ import { TodasCategoriasComponent } from './todas-categorias/todas-categorias.co
 import { MeusanunciosComponent } from './meusanuncios/meusanuncios.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
     TodasCategoriasComponent,
     MeusanunciosComponent,
     ProdutoEditComponent,
-    ProdutoDeleteComponent
+    ProdutoDeleteComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

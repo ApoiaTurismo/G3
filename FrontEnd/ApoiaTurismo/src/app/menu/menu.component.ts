@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
 
   nick = environment.nick
   foto = environment.foto
+  id = environment.id
 
   constructor(
     private router: Router

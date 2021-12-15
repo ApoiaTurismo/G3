@@ -1,0 +1,95 @@
+<div class="container my-5">
+
+  <div class="row">
+    <div class="col-md-12 d-flex flex-column align-items-center flex-wrap">
+      <h1 class="text-center">Atualizar o usuário</h1>
+      <img src="{{usuario.foto}}" class="" alt="" style='border-radius: 50%; height: 250px; width: 250px;'>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input
+      [(ngModel)]='usuario.nomeUsuario'
+      type="text"
+      class="form-control"
+      name="nome"
+      id="nome"
+      placeholder="Seu nome"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+    [(ngModel)]='usuario.email'
+      type="text"
+      class="form-control"
+      name="email"
+      id="email"
+      placeholder="Seu email"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="nick">Usuário</label>
+    <input
+    [(ngModel)]='usuario.nick'
+      type="text"
+      class="form-control"
+      name="usuario"
+      id="usuario"
+      placeholder="Seu nome de usuário"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="nick">Foto</label>
+    <input
+    [(ngModel)]='usuario.foto'
+      type="text"
+      class="form-control"
+      name="foto"
+      id="foto"
+      placeholder="Link da sua foto"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="senha">Senha</label>
+    <input
+      (input)="confirmSenha($event)"
+      type="password"
+      class="form-control"
+      name="senha"
+      id="senha"
+      placeholder="Sua senha"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="confirmSenha">Confirmar senha</label>
+    <input
+    [(ngModel)]='usuario.senha'
+      onkeyup="verificaSenha()"
+      type="password"
+      class="form-control"
+      name="confirmSenha"
+      id="confirmSenha"
+      placeholder="Sua senha"
+    />
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <a routerLink="/inicio">
+      <button type="button" class="btn btn-outline-dark mt-1 mr-5 " style="border-radius: 20px;">
+        Cancelar
+      </button>
+    </a>
+    <button (click)="atualizar()" type="button" class="btn btn-outline-dark mt-1" style="border-radius: 20px;">
+      Atualizar
+    </button>
+  </div>
+
+</div>
