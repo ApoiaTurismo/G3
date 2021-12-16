@@ -20,7 +20,7 @@ public class UsuarioService {
 
 	public Optional<UsuarioModel> cadastrarUsuario(UsuarioModel usuario) {
 
-		if (usuarioRepository.findByNick(usuario.getNick()).isPresent())
+		if (usuarioRepository.findByNick(usuario.getNick()).isPresent() || usuarioRepository.findByEmail(usuario.getEmail()).isPresent())
 			return Optional.empty();
 
 		usuario.setSenha(criptografarSenha(usuario.getSenha()));
@@ -62,6 +62,7 @@ public class UsuarioService {
 				usuarioLogin.get().setNomeUsuario(usuario.get().getNomeUsuario());
 				usuarioLogin.get().setNick(usuario.get().getNick());
 				usuarioLogin.get().setEmail(usuario.get().getEmail());
+				usuarioLogin.get().setFoto(usuario.get().getFoto());
 				usuarioLogin.get().setSenha(usuario.get().getSenha());
 				usuarioLogin.get().setToken(token);
 

@@ -33,8 +33,6 @@ public class CategoriaModel {
 	@Size(min = 5, max = 255, message = "A descrição deve conter no mínimo 5 e no máximo 255 caracteres")
 	private String descricaoCategoria;
 
-	@NotBlank(message = "Não pode conter só espaços ou valor nulo")
-	@Size(min = 3, max = 255, message = "O atributo icone deve conter no mínimo 3 e no máximo 255 caracteres")
 	private String icone;
 
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)

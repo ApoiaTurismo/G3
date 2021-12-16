@@ -44,18 +44,30 @@ public class UsuarioModel {
 	//@Size(min = 6, max = 15, message = "A senha deve conter no mínimo 6 e no máximo 15 caracteres")
 	private String senha;
 
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	private String foto;
+
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<ProdutoModel> produto;
 
-	public UsuarioModel(long id, String nome, String nick, String email, String senha) {
+	public UsuarioModel(long id, String nome, String nick, String email, String senha, String foto) {
 	
 		this.idUsuario = id;
 		this.nomeUsuario = nome;
 		this.nick = nick;
+		this.foto = foto;
 		this.email = email;
 		this.senha = senha;
 		
+	}
+	
+	
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 	
 	public UsuarioModel() {
