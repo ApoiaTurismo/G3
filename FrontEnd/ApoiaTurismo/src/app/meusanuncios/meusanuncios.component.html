@@ -14,12 +14,12 @@
   <div *ngFor="let item of usuario.produto" class="card mb-3" style="max-width: 600px; max-height: 250px;">
     <div class="row no-gutters">
       <div class="col-md-4 align-items-center">
-        <img src="{{item.fotoUrl}}" class="card-img" alt="..." style="object-fit: cover; width: 220px; height: 250px;">
+        <img src="{{item.fotoUrl}}" class="card-img" alt="..." style="object-fit: cover; width: 220px; height: 248px;">
       </div>
       <div class="col-md-8">
         <div class="card-body ml-2">
-          <h5 class="card-title">{{item.titulo}}</h5>
-          <p class="card-text">{{item.descricaoProduto}}</p>
+          <h5 class="card-title">{{(item.titulo.length>34)? (item.titulo | slice:0:32) + '..':(item.titulo)}}</h5>
+          <p class="card-text">{{(item.descricaoProduto.length>80)? (item.descricaoProduto | slice:0:80) + '..': (item.descricaoProduto)}}</p>
           <h5 class="card-title text-bold">R${{item.preco}}</h5>
 
           <a [routerLink]="['/produto-edit',item.idProduto]" class="btn btn-info mr-3">Editar</a>

@@ -36,4 +36,8 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/inicio'])
   }
 
+  scrollToQuemSomos(){
+    document.querySelector('#quemsomos')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+
 }

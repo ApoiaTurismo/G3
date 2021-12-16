@@ -33,6 +33,10 @@ export class MeusanunciosComponent implements OnInit {
 
   ngOnInit() {
 
+    if(environment.token == ''){
+      this.router.navigate(['/inicio'])
+    }
+
     this.getAllCategorias()
     this.getAllProdutos()
     this.getFindByIdUser()
@@ -41,6 +45,7 @@ export class MeusanunciosComponent implements OnInit {
 
   logado(){
     if(environment.token != ''){
+
       return true
     }
     return false

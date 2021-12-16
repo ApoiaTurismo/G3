@@ -16,6 +16,7 @@ export class CategoriasComponent implements OnInit {
   produto: Produto = new Produto()
   categoria: Categoria = new Categoria()
   idCategoria: number
+  listaProdutos: Produto[]
   id: number
 
   constructor(
@@ -28,6 +29,13 @@ export class CategoriasComponent implements OnInit {
     window.scroll(0,0)
 
     this.idCategoria = this.route.snapshot.params['id']
+  }
+
+
+  getAllProdutos(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp
+    })
   }
 
   findByIdCategoria(){

@@ -1,6 +1,9 @@
-<nav class="navbar navbar-light justify-content-between text-light">
-  <div class="d-flex inline ml-5">
-    <a class="navbar-brand text-light">Apoia Turismo</a>
+<nav class="navbar navbar-expand-lg navbar-light text-light" id='navbar'>
+  <a class="navbar-brand text-light" routerLink="/inicio">Apoia Turismo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse  justify-content-between" id="navbarNavDropdown">
     <div class="dropright">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Regiões
@@ -12,12 +15,71 @@
         <button class="dropdown-item" type="button">Nordeste</button>
         <button class="dropdown-item" type="button">Norte</button>
       </div>
+  </div>
+
+
+  <div class="content-center">
+    <form class="form-inline">
+      <input class="form-control" type="search" placeholder="Queria pesquisar por..." style="width: 600px;" aria-label="Search">
+      <button type="button" class="btn btn-primary ml-1">Pesquisar</button>
+      </form>
+  </div>
+
+  <div>
+    <button type="button" class="btn ml-1 text-light" id='btn-quemsomos' (click)="scrollToQuemSomos()">quem somos</button>
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <a class="mr-1" href="/categorias/carrinho" style="text-decoration: none;">
+      <div class="rounded-circle bg-light d-flex justify-content-center align-items-center m-auto" style="height: 40px; width: 40px;">
+        <i class="fa fa-shopping-cart"></i>
+      </div>
+    </a>
+    <a  *ngIf="logado() == false" routerLink="/entrar">
+      <button type="button" class="btn btn-secondary mr-3">
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        Entrar</button>
+    </a>
+    <div *ngIf="logado()" class="mx-3">
+      <a routerLink="/meusanuncios" class="btn btn-warning mr-3">meus anuncios</a>
+        <a [routerLink]="['/user-edit',id]"  style="text-decoration: none; color: white;">
+          <img src="{{foto}}" alt="" width="40px" height="40px" class="mr-3 img-fluid rounded-circle">
+          <strong>{{nick}}</strong>
+        </a>
+        <a (click)="sair()">
+          <i class="fa fa-sign-out ml-2" aria-hidden="true"></i>
+        </a>
     </div>
   </div>
-  <form class="form-inline">
-  <input class="form-control" type="search" placeholder="Queria pesquisar por..." style="width: 600px;" aria-label="Search">
-  <button type="button" class="btn btn-primary ml-1">Pesquisar</button>
-  </form>
+  </div>
+</nav>
+
+<!-- ANTIGA NAV-BAR
+
+<nav class="navbar navbar-expand-lg navbar-light text-light justify-content-between">
+  <a class="navbar-brand text-light" routerLink="/inicio">Apoia Turismo</a>
+
+  <div class="dropright">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Regiões
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button">Sul</button>
+        <button class="dropdown-item" type="button">Sudeste</button>
+        <button class="dropdown-item" type="button">Centro-Oeste</button>
+        <button class="dropdown-item" type="button">Nordeste</button>
+        <button class="dropdown-item" type="button">Norte</button>
+      </div>
+  </div>
+
+
+  <div class="content-center">
+    <form class="form-inline">
+      <input class="form-control" type="search" placeholder="Queria pesquisar por..." style="width: 600px;" aria-label="Search">
+      <button type="button" class="btn btn-primary ml-1">Pesquisar</button>
+      </form>
+  </div>
+
   <div class="d-flex justify-content-between mr-5">
     <a class="mr-3" href="/categorias/carrinho" style="text-decoration: none;">
       <div class="rounded-circle bg-light d-flex justify-content-center align-items-center m-auto" style="height: 40px; width: 40px;">
@@ -39,6 +101,8 @@
           <i class="fa fa-sign-out ml-2" aria-hidden="true"></i>
         </a>
     </div>
-  <!--  <button type="button" class="btn btn-warning">Anunciar</button> -->
+    <button type="button" class="btn btn-warning">Anunciar</button>
   </div>
 </nav>
+
+-->

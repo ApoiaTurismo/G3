@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { CategoriaService } from '../service/categoria.service';
@@ -20,9 +20,12 @@ export class CategoriaComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService
-  ) { }
+  ) {
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+   }
 
   ngOnInit(){
     window.scroll(0,0)
@@ -30,6 +33,7 @@ export class CategoriaComponent implements OnInit {
     this.idCategoria = this.route.snapshot.params['id']
 
     this.findByIdCategoria()
+    this.getAllProdutos()
   }
 
   findByIdCategoria(){
