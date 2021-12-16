@@ -37,4 +37,10 @@ export class ProdutoService {
     return this.http.delete(`http://localhost:8080/produtos/${id}`, this.token)
   }
 
+  getByTituloProduto(titulo : string):Observable<Produto[]>{
+    return this.http.get<Produto[]>(`http://localhost:8080/produtos/titulo/${titulo}`, this.token)
+  }
+
+
+
 }

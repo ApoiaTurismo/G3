@@ -1,0 +1,33 @@
+<div class="container-fluid my-5">
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="fs-42 text-center">{{titulo}}</h1>
+      <h5 class="fs-18 text-center">Todos os produtos que contém '{{titulo}}' no título</h5>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="card-columns">
+
+    <div *ngFor="let item of listaProdutos" class="card mb-3" style="max-width: 600px; max-height: 250px;">
+      <div class="row no-gutters">
+        <div class="col-md-4 align-items-center">
+          <img src="{{item.fotoUrl}}" class="card-img" alt="..." style="object-fit: cover; width: 220px; height: 248px;">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body ml-2">
+            <h5 class="card-title">{{(item.titulo.length>34)? (item.titulo | slice:0:32) + '..':(item.titulo)}}</h5>
+            <p class="card-text">{{(item.descricaoProduto.length>80)? (item.descricaoProduto | slice:0:80) + '..': (item.descricaoProduto)}}</p>
+            <h5 class="card-title text-bold">R${{item.preco}}</h5>
+            <p class="card-text"><small class="text-muted">Publicado por: {{item.usuario.nick}}</small></p>
+            <a href="#" class="btn btn-primary">Comprar</a><a href="#" class="btn btn-success"><i class="fa fa-shopping-cart"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

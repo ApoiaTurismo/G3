@@ -23,6 +23,8 @@ export class InicioComponent implements OnInit {
   usuario: Usuario = new Usuario()
   idUser = environment.id
 
+  tituloProduto: string
+
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
@@ -52,6 +54,13 @@ export class InicioComponent implements OnInit {
   getAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
+    })
+  }
+
+  findByTituloProduto(titulo: string){
+    this.produtoService.getByTituloProduto(titulo).subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp
+      console.log(this.listaProdutos)
     })
   }
 
