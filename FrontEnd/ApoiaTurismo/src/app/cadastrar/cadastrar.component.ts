@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { Inject }  from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-cadastrar',
@@ -17,7 +18,8 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -30,14 +32,14 @@ export class CadastrarComponent implements OnInit {
 
   cadastrar(){
     if(this.usuario.senha != this.confirmarSenha){
-      alert('As senhas estão incorretas')
+      this.alertas.showAlertDanger('As senhas estão incorretas')
     } else {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
-        alert('Usuário cadastrado com sucesso!')
+        this.alertas.showAlertSuccess('Usuário cadastrado com sucesso!')
         this.router.navigate(['/entrar'])
       }, erro => {
-        if(erro.status == 400) alert('Email ou usuário já existente!')
+        if(erro.status == 400) this.alertas.showAlertInfo('Email ou usuário já existente!')
       })
     }
   }

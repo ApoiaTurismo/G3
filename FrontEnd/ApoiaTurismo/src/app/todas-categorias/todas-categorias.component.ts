@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class TodasCategoriasComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -41,10 +43,12 @@ export class TodasCategoriasComponent implements OnInit {
   cadastrar(){
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp
-      alert('categoria cadastrada com sucesso!')
+      this.alertas.showAlertSuccess('categoria cadastrada com sucesso!')
       this.findAllCategorias()
       this.categoria = new Categoria()
-    })
+
+    }, error => {
+      if(error.status == 400) this.alertas.showAlertDanger('Erro, a categoria precisa de uma descrição!')    })
   }
 
 }
