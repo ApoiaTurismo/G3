@@ -5,3 +5,42 @@
 .fs-18 {
   font-size: 18pt;
 }
+
+
+#h1AP{
+  transform: translateY(+50px);
+  opacity: 0;
+}
+
+#h5AP{
+  transform: translateY(+50px);
+  opacity: 0;
+}
+
+#h5AP.animar{
+  animation-name: slide;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+#h1AP.animar{
+  animation-name: slide;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide {
+
+  from {
+    opacity: 0
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1
+  }
+
+}

@@ -35,6 +35,7 @@ export class InicioComponent implements OnInit {
 
     this.getAllCategorias()
     this.getAllProdutos()
+    this.ativarAnimacao()
 
   }
 
@@ -83,6 +84,11 @@ export class InicioComponent implements OnInit {
       this.ngOnInit()
       this.produto = new Produto()
     })
+  }
+
+  ativarAnimacao(){
+    document.querySelector('h1')?.classList.toggle('animar')
+    document.querySelector('h5')?.classList.toggle('animar')
   }
 
 }

@@ -47,6 +47,7 @@ export class MenuComponent implements OnInit {
 
   pesquisar(){
     this.titulo = (document.getElementById('caixaPesquisa') as HTMLInputElement).value
+    if(this.titulo == '') this.router.navigate(['/inicio'])
     this.router.navigate(['/pesquisa/' + this.titulo])
   }
 
