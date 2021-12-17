@@ -9,6 +9,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { MeusanunciosComponent } from './meusanuncios/meusanuncios.component';
+import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { TodasCategoriasComponent } from './todas-categorias/todas-categorias.component';
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:'produto-edit/:id', component:ProdutoEditComponent},
   {path:'produto-delete/:id', component:ProdutoDeleteComponent},
   {path:'user-edit/:id', component:UserEditComponent},
-  {path:'categoria/:id', component: CategoriaComponent}
+  {path:'categoria/:id', component: CategoriaComponent},
+  {path:'pesquisa/:s', component: PesquisaComponent}
 
 ];
 

@@ -26,6 +26,8 @@ export class InicioComponent implements OnInit {
 
   key = 'data'
   reverse = true
+  tituloProduto: string
+
 
   constructor(
     private router: Router,
@@ -38,6 +40,7 @@ export class InicioComponent implements OnInit {
 
     this.getAllCategorias()
     this.getAllProdutos()
+    this.ativarAnimacao()
 
   }
 
@@ -60,6 +63,13 @@ export class InicioComponent implements OnInit {
     })
   }
 
+  findByTituloProduto(titulo: string){
+    this.produtoService.getByTituloProduto(titulo).subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp
+      console.log(this.listaProdutos)
+    })
+  }
+
   findByIdCategoria(){
     this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
       this.categoria = resp
@@ -79,6 +89,11 @@ export class InicioComponent implements OnInit {
       this.ngOnInit()
       this.produto = new Produto()
     })
+  }
+
+  ativarAnimacao(){
+    document.querySelector('h1')?.classList.toggle('animar')
+    document.querySelector('h5')?.classList.toggle('animar')
   }
 
 }

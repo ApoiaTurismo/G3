@@ -48,6 +48,7 @@ public class ProdutoController {
 	public ResponseEntity<ProdutoModel> postProduto(@Valid @RequestBody ProdutoModel produto){
 		return ResponseEntity.status(HttpStatus.CREATED).body(produtoRepository.save(produto));
 	}
+	
 	@PutMapping
 	public ResponseEntity<ProdutoModel> putProduto(@Valid @RequestBody ProdutoModel produto){
 		return produtoRepository.findById(produto.getIdProduto())

@@ -20,13 +20,14 @@
 
   <div class="content-center">
     <form class="form-inline">
-      <input class="form-control" type="search" placeholder="Queria pesquisar por..." style="width: 600px;" aria-label="Search">
-      <button type="button" class="btn btn-primary ml-1">Pesquisar</button>
+      <input class="form-control" type="search" placeholder="Queria pesquisar por..." style="width: 600px;" aria-label="Search" id='caixaPesquisa'>
+      <button type="button" class="btn btn-primary ml-1" (click)='pesquisar()'>Pesquisar</button>
       </form>
   </div>
 
   <div>
-    <button type="button" class="btn ml-1 text-light" id='btn-quemsomos' (click)="scrollToQuemSomos()">quem somos</button>
+    <button type="button" class="btn mx-1 text-light" id='btn-quemsomos' (click)="scrollToQuemSomos()">quem somos</button>
+  <!--<button class="btn btn-dark text-light" (click)='enableDarkMode()'>DarkMode</button>-->
   </div>
 
   <div class="d-flex justify-content-between">
