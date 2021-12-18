@@ -51,16 +51,6 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/pesquisa/' + this.titulo])
   }
 
-  sendTituloProduto(){
-    var titulo = (document.getElementById('caixaPesquisa') as HTMLInputElement).value
-    console.log(titulo)
-    if(titulo){
-      let inicioComponent = new InicioComponent(this.router, this.produtoService, this.categoriaService)
-
-      inicioComponent.findByTituloProduto(titulo)
-    }
-  }
-
   scrollToQuemSomos(){
     document.querySelector('#quemsomos')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
