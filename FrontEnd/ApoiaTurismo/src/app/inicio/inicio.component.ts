@@ -83,6 +83,9 @@ export class InicioComponent implements OnInit {
     this.usuario.idUsuario = this.idUser
     this.produto.usuario = this.usuario
 
+    const body = document.querySelector('body')
+    if(body) body.style.padding = '0px'
+
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
       this.alertas.showAlertSuccess('Anuncio feito com sucesso!')
